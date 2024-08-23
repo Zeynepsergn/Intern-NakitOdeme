@@ -1,16 +1,12 @@
 package tr.gov.gib.nakitodeme.object.response;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-import java.util.Date;
+import java.io.Serializable;
 
-@Getter
-@Setter
-public class NakitResponse {
+@Data
+public class NakitResponse  implements Serializable {
     private String oid;
     private Integer odemeId;
-    private Date optime;
     private Short durum;
-
 }

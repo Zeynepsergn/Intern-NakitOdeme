@@ -1,15 +1,14 @@
 package tr.gov.gib.nakitodeme.object.request;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.math.BigDecimal;
 
-@Getter
-@Setter
-public class NakitRequest {
+@Data
+public class NakitRequest implements Serializable {
+
     private String oid;
-    private Integer odemeId;
-    private Date optime;
-    private Short durum;
+    private Integer odemeOid;
+    private BigDecimal odenecekMiktar;
 }
