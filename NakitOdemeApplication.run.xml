@@ -1,0 +1,23 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="NakitOdemeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <envs>
+      <env name="DB_URL" value="jdbc:postgresql://localhost:5432/gib_staj" />
+      <env name="DB_USER" value="postgres" />
+      <env name="DB_PASS" value="123456" />
+      <env name="PORT" value="9090" />
+      <env name="DB_SCHEMA" value="gsths" />
+      <env name="SWAGGER_TITLE" value="Nakit Servis" />
+      <env name="SWAGGER_VERSION" value="1.0" />
+      <env name="SWAGGER_DSC" value="Nakit Servis İşlemleri yapılır" />
+      <env name="SWAGGER_TOS" value="https://gib.gov.tr" />
+      <env name="SWAGGER_NAME" value="Zeynep Sultan Ergin" />
+      <env name="SWAGGER_EMAIL" value="zeynep.sultan.ergin@gelirler.gov.tr" />
+    </envs>
+    <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <module name="NakitOdeme.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="tr.gov.gib.nakitodeme.NakitOdemeApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
