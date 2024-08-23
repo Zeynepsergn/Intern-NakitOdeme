@@ -1,14 +1,11 @@
 package tr.gov.gib.nakitodeme.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 
 @Getter
@@ -27,7 +24,10 @@ public class NakitOdeme {
     @Column(name = "optime")
     private Date optime;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "durum")
-    private Short durum;
+    private Durum durum;
 
+    public void setIadeler(ArrayList<Object>objectArrayList ) {
+    }
 }

@@ -1,15 +1,29 @@
 package tr.gov.gib.nakitodeme.object.request;
 
-import lombok.Getter;
-import lombok.Setter;
+import tr.gov.gib.nakitodeme.entity.Durum;
 
 import java.util.Date;
 
-@Getter
-@Setter
 public class NakitRequest {
     private String oid;
     private Integer odemeId;
     private Date optime;
-    private Short durum;
+    private Durum durum;
+
+    // Getters
+    public String getOid() {
+        return oid;
+    }
+
+    public Integer getOdemeId() {
+        return odemeId;
+    }
+
+    public Date getOptime() {
+        return optime;
+    }
+
+    public Durum getDurum() {
+        return durum;
+    }
 }
