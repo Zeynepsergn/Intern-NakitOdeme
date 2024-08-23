@@ -1,7 +1,10 @@
 package tr.gov.gib.nakitodeme.controller;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import tr.gov.gib.gibcore.object.request.GibRequest;
+import tr.gov.gib.gibcore.object.response.GibResponse;
 import tr.gov.gib.nakitodeme.object.request.NakitRequest;
 import tr.gov.gib.nakitodeme.object.response.NakitResponse;
 import tr.gov.gib.nakitodeme.service.NakitOdemeService;
@@ -17,8 +20,9 @@ public class NakitOdemeController {
     }
 
     @PostMapping("/odeme-al")
-    public ResponseEntity<NakitResponse> handlePayment(@RequestBody NakitRequest request) {
-        NakitResponse response = nakitOdemeService.handlePayment(request);
-        return ResponseEntity.ok(response);
+    public ResponseEntity<GibResponse<NakitResponse>> handlePayment(@RequestBody GibRequest<NakitRequest> request) {
+        GibResponse<NakitResponse> gibResponse = nakitOdemeService.handlePayment(request);
+        return new ResponseEntity<>(gibResponse, HttpStatus.OK);
     }
+
 }

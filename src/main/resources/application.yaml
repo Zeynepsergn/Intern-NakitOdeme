@@ -1,13 +1,9 @@
 server:
   port: ${PORT}
 
-banka:
-  servis:
-    url: ${BANKA_URL}
-
 spring:
   application:
-    name: FPos
+    name: NakitOdeme
   datasource:
     url: ${DB_URL}
     username: ${DB_USER}
@@ -39,10 +35,3 @@ swagger:
     contact:
       name: ${SWAGGER_NAME}
       email: ${SWAGGER_EMAIL}
-      springfox:
-        documentation:
-        swagger:
-            v2:
-              path: /api-docs
-            v3:
-              path: /v3/api-docs
