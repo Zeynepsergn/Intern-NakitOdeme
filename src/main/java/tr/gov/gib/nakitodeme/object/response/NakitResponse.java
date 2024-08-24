@@ -7,6 +7,6 @@ import java.io.Serializable;
 @Data
 public class NakitResponse  implements Serializable {
     private String oid;
-    private Integer odemeId;
+    private Integer odemeOid;
     private Short durum;
 }

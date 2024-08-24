@@ -29,7 +29,7 @@ public class NakitOdemeServiceImpl implements NakitOdemeService {
         System.out.println("odemeRequest: " + nakitRequest);
         NakitResponse response = new NakitResponse();
         response.setOid(nakitRequest.getOid());
-        response.setOdemeId(nakitRequest.getOdemeOid());
+        response.setOdemeOid(nakitRequest.getOdemeOid());
         response.setDurum(FposSposNakitDurum.BASARILI_ODEME.getSposFposNakitDurumKodu());
 
         //Veritabanı kayıt işlemleri.
@@ -38,6 +38,7 @@ public class NakitOdemeServiceImpl implements NakitOdemeService {
         nakitOdeme.setOdemeId(nakitRequest.getOdemeOid());
         nakitOdeme.setOptime(new Date());
         nakitOdeme.setDurum(FposSposNakitDurum.BASARILI_ODEME.getSposFposNakitDurumKodu());
+        nakitRepository.save(nakitOdeme);
 
         return GibResponse.builder().service(ServiceMessage.OK).data(response).build();
     }
