@@ -12,7 +12,6 @@ import tr.gov.gib.nakitodeme.repository.NakitRepository;
 import tr.gov.gib.nakitodeme.service.NakitOdemeService;
 
 import java.util.Date;
-
 @Service
 public class NakitOdemeServiceImpl implements NakitOdemeService {
 
