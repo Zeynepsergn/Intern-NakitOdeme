@@ -24,20 +24,24 @@ public class NakitOdemeServiceImpl implements NakitOdemeService {
 
     @Override
     public GibResponse  handlePayment(GibRequest<NakitRequest> request) {
-        //Ödeme işlemleri
-        NakitRequest nakitRequest = request.getData();
+
+        //payment process
+         NakitRequest nakitRequest = request.getData();
         System.out.println("odemeRequest: " + nakitRequest);
         NakitResponse response = new NakitResponse();
         response.setOid(nakitRequest.getOid());
         response.setOdemeId(nakitRequest.getOdemeOid());
         response.setDurum(FposSposNakitDurum.BASARILI_ODEME.getSposFposNakitDurumKodu());
 
-        //Veritabanı kayıt işlemleri.
+
+        // saveToDatabase
         NakitOdeme nakitOdeme = new NakitOdeme();
         nakitOdeme.setOid(nakitRequest.getOid());
         nakitOdeme.setOdemeId(nakitRequest.getOdemeOid());
         nakitOdeme.setOptime(new Date());
         nakitOdeme.setDurum(FposSposNakitDurum.BASARILI_ODEME.getSposFposNakitDurumKodu());
+        nakitRepository.save(nakitOdeme);
+
 
         return GibResponse.builder().service(ServiceMessage.OK).data(response).build();
     }
