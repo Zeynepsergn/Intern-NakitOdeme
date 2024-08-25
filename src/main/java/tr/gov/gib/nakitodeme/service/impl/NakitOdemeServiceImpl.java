@@ -32,7 +32,6 @@ public class NakitOdemeServiceImpl implements NakitOdemeService {
         response.setOdemeId(nakitRequest.getOdemeOid());
         response.setDurum(FposSposNakitDurum.BASARILI_ODEME.getSposFposNakitDurumKodu());
 
-
         // saveToDatabase
         NakitOdeme nakitOdeme = new NakitOdeme();
         nakitOdeme.setOid(nakitRequest.getOid());
@@ -40,7 +39,6 @@ public class NakitOdemeServiceImpl implements NakitOdemeService {
         nakitOdeme.setOptime(new Date());
         nakitOdeme.setDurum(FposSposNakitDurum.BASARILI_ODEME.getSposFposNakitDurumKodu());
         nakitRepository.save(nakitOdeme);
-
 
         return GibResponse.builder().service(ServiceMessage.OK).data(response).build();
     }
