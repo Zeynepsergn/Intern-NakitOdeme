@@ -12,7 +12,6 @@ import tr.gov.gib.nakitodeme.repository.NakitRepository;
 import tr.gov.gib.nakitodeme.service.NakitOdemeService;
 
 import java.util.Date;
-
 @Service
 public class NakitOdemeServiceImpl implements NakitOdemeService {
 
@@ -24,15 +23,16 @@ public class NakitOdemeServiceImpl implements NakitOdemeService {
 
     @Override
     public GibResponse  handlePayment(GibRequest<NakitRequest> request) {
-        //Ödeme işlemleri
-        NakitRequest nakitRequest = request.getData();
+
+        //payment process
+         NakitRequest nakitRequest = request.getData();
         System.out.println("odemeRequest: " + nakitRequest);
         NakitResponse response = new NakitResponse();
         response.setOid(nakitRequest.getOid());
         response.setOdemeOid(nakitRequest.getOdemeOid());
         response.setDurum(FposSposNakitDurum.BASARILI_ODEME.getSposFposNakitDurumKodu());
 
-        //Veritabanı kayıt işlemleri.
+        // saveToDatabase
         NakitOdeme nakitOdeme = new NakitOdeme();
         nakitOdeme.setOid(nakitRequest.getOid());
         nakitOdeme.setOdemeId(nakitRequest.getOdemeOid());
