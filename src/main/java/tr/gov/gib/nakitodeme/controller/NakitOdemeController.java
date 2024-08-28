@@ -10,7 +10,7 @@ import tr.gov.gib.nakitodeme.object.response.NakitResponse;
 import tr.gov.gib.nakitodeme.service.NakitOdemeService;
 
 @RestController
-@RequestMapping("/api/nakit-odeme")
+//@RequestMapping("/api/nakit-odeme")
 public class NakitOdemeController {
 
     private final NakitOdemeService nakitOdemeService;
@@ -19,7 +19,7 @@ public class NakitOdemeController {
         this.nakitOdemeService = nakitOdemeService;
     }
 
-    @PostMapping("/odeme-al")
+    @PostMapping("/nakitOdemeYap")
     public ResponseEntity<GibResponse<NakitResponse>> handlePayment(@RequestBody GibRequest<NakitRequest> request) {
         GibResponse<NakitResponse> gibResponse = nakitOdemeService.handlePayment(request);
         return new ResponseEntity<>(gibResponse, HttpStatus.OK);
